@@ -1,0 +1,63 @@
+.login-frame{
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: #E0C6E6;
+    margin-top: 50px;
+    position: absolute;
+    width: 700px;
+    height: 370px;
+    top: 100px;
+    border-radius: 15px;
+}
+
+.login-info{
+    margin: 30px auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* 요소 간 간격 */
+}
+
+.login-icon {
+    display: flex;
+    align-items: center;
+}
+
+.btn__login {
+    background-color: #5C4D9E; 
+    color: white; 
+    border: none; 
+    border-radius: 15px; 
+    padding: 10px; 
+    width: 100%; 
+    cursor: pointer; 
+}
+
+.input-id, .input-pw{
+    width: 75%; /* 전체 너비 차지 */
+    padding: 10px; /* 패딩 */
+    border-radius: 15px; /* 모서리 둥글게 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 너비 계산 */
+    border: none;
+}
+
+.login-id, .login-pw{
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.find-idpw{
+    display: flex;
+    justify-content: center;
+}
+
+.find-idpw a{
+    color: black;
+    text-decoration: none;
+}
+
+.login-info > :last-child {
+    margin-top: -5px; 
+}

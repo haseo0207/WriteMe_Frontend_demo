@@ -1,0 +1,53 @@
+.top {
+    position: fixed; 
+    z-index: 1000; 
+    top: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 95%; 
+    padding: 10px 20px; 
+
+    background-color: white;
+
+    /* background-color: white; */
+
+    height: 40px; /* 높이 설정 */
+    display: flex;
+    justify-content: space-between; /* 왼쪽과 오른쪽 항목을 양쪽 끝으로 배치 */
+    align-items: center; /* 수직 중앙 정렬 */  
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.items { 
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+.items li{
+    position: relative; 
+    padding: 0 5px; 
+}
+
+ul.items li:first-child:before{
+    display: none;
+}
+
+ul.items li::before{
+    content: "";
+    width: 1px;
+    height: 12px;
+    background-color: #e5e5e5;
+    position: absolute; /* 블록으로 디스플레이 자동변환 */
+    top: 0;
+    bottom: 0;
+    margin: auto; 
+    margin-left: -5px;
+}

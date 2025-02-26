@@ -1,0 +1,45 @@
+.notice-item {
+    background-color: var(--mainWhite);
+    line-height: 1.5rem;
+    padding: 10px 20px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s linear;
+    cursor: pointer;
+  }
+
+  .info-l {
+    display: flex;
+    flex: 0 0 80%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .info-r {
+    display: flex;
+    flex: 0 0 18%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .listtime{
+    margin-right: 40px;
+  }
+  .profileicon {
+    font-size: 50px;
+    color: black;
+    margin-right: 10px;
+  }
+
+  .viewicon {
+    /* font-size: 50px; */
+    color: black;
+    margin-right: 5px;
+  }
+  .listwirte, .listview{
+    display: flex;
+    align-items: center;
+  }
+
+  
