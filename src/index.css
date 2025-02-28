@@ -1,51 +1,45 @@
+.icon-font {
+  font-family: 'YourFontFamily', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: #5E35B1;
+}
+
+ul {
+  list-style: none;
+}
+
+html,
 body {
-    color: #333;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.4;
-    font-family: 'Nanum Gothic', sans-serif;
-  }
-  
-  .icon-font {
-    font-family: 'YourFontFamily', sans-serif;
-    font-weight: bold;
-    font-size: 24px;
-    color: #5E35B1;
-  }
-  
-  ul {
-    list-style: none; /* 기본 동그라미 제거 */
-  
-  }
-  
-  .header_box{
-    background-color: #E0C6E6;
-    width: 100%;
-    height: 40px;
-    border-radius: 15px;
-  }
-  
-  .inputbox{
-      padding: 10px; /* 패딩 */
-      border-radius: 15px; /* 모서리 둥글게 */
-      box-sizing: border-box; /* 패딩과 테두리를 포함한 너비 계산 */
-      border: none;
-  }
-  
-  .btn_red {
-    background-color: red; 
-    color: white; 
-    border: none; 
-    border-radius: 15px; 
-    padding: 10px; 
-    cursor: pointer; 
-  }
-  .btn_pupple {
-    background-color: #5C4D9E; 
-    color: white; 
-    border: none; 
-    border-radius: 15px; 
-    padding: 10px; 
-    cursor: pointer; 
-  }
-  
+  margin: 0px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.header_box {
+  background-color: #E0C6E6;
+  width: 100%;
+  height: 40px;
+  border-radius: 15px;
+}
+
+ .inputbox {
+  padding: 10px;
+  border-radius: 15px;
+  box-sizing: border-box;
+  border: none;
+}
+
+#root {
+  background-color: white;
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  height: 100%;
+  box-shadow: rgba(100, 100, 100, 0.2) 0px 0px 29px 0px;
+  padding: 0px 20px;
+}

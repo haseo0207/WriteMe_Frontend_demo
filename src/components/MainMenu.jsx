@@ -1,19 +1,18 @@
 import React from 'react'
 import "./MainMenu.css"
-const MainMenu = () => {
-    return (
-        <>
-        <div className='mainmenu'>
-        <ul className='main-menu'>
-                <li>커뮤니티</li>          
-                <li>공지사항</li>
-                <li>이벤트</li>
-            </ul>
-        </div>
-            
-        </>
+import { useNavigate } from "react-router-dom";
 
-    )
+const MainMenu = () => {
+  const nav = useNavigate();
+  return (
+    <>
+      <ul className='main-menu'>
+        <li>커뮤니티</li>
+        <li onClick={() => nav("/notice")} >공지사항</li>
+        <li>이벤트</li>
+      </ul>
+    </>
+  )
 }
 
 export default MainMenu

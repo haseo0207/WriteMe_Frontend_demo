@@ -1,41 +1,43 @@
 import "./App.css";
-import { useReducer, useRef, createContext, useCallback,useState} from "react";
+import { useReducer, useRef, createContext, useCallback, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import JoinMember from "./pages/JoinMember";
 import Login from "./pages/Login";
 import Notice from "./pages/Notice";
 import Header from "./components/Header";
-import {handleContentsClick} from "./util/noticeclick";
-export const DiaryStateContext = createContext();
-export const DiaryDispatchContext = createContext();
+import { handleContentsClick } from "./util/noticeclick";
+import View from "./pages/View";
+
+export const UserStateContext = createContext();
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'LOGIN':
+      console.log("ttest");
+      return { id: action.payload.id, nickname: action.payload.nickname };
+      case 'LOGOUT':
+      return { id: "", nickname: "" };
+    default:
+      return state;
+  }
+}
 
 const App = () => {
-  const [noticelist, setNoticeList] = useState([
-    { id: 1, title: "제목1", name: "관리자", view:1 ,time:"11:00",contents:"test1",usrid:"11"},
-    { id: 2, title: "제목2", name: "관리자", view:1 ,time:"12:00",contents:"test2",usrid:"22"},
-    { id: 3, title: "제목3", name: "관리자", view:1 ,time:"13:00",contents:"test3",usrid:"33"},
-    { id: 4, title: "제목4", name: "관리자", view:1 ,time:"14:00",contents:"test4",usrid:"44"},
-    { id: 5, title: "제목5", name: "관리자", view:1 ,time:"15:00",contents:"test5",usrid:"55"},
-  ]);
+  const [userInfo, dispatchUserInfo] = useReducer(reducer, { id: "", nickname: "" });
 
   return (
     <>
-      <Header />
-      <DiaryStateContext.Provider value={noticelist}>
-      <DiaryDispatchContext.Provider
-          value={{
-            handleContentsClick
-          }}
-        >
+      {/* <Header /> */}
+      <UserStateContext.Provider value={{userInfo,dispatchUserInfo}}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/join" element={<JoinMember />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/join" element={<JoinMember />} />
           <Route path="/notice" element={<Notice />} />
+          <Route path="/notice/view/:id" element={<View />} />
         </Routes>
-        </DiaryDispatchContext.Provider>
-      </DiaryStateContext.Provider>
+      </UserStateContext.Provider>
     </>
   );
 }

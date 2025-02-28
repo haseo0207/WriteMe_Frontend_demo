@@ -1,7 +1,24 @@
-import React from 'react'
-import "./Login_c.css"
+import React, { useState } from 'react'
+import "./LoginForm.css"
 import logo from "./../assets/PlayTalk.png";
-const Login = () => {
+const LoginForm = ({ onLoginSubmit }) => {
+    const [loginData, setLoginData] = useState({
+        id: '',
+        pw: '',
+    });
+
+    const handleSubmit = (e) => {
+        if (!loginData.id || !loginData.pw) {
+            alert('아이디와 비밀번호를 입력해주세요.');
+            return;
+          }
+        onLoginSubmit(loginData);
+    };
+
+    const handleChange = (e) => {
+        setLoginData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+      };
+
     return (
         <>
             <div className='login-frame'>
@@ -18,6 +35,8 @@ const Login = () => {
                             className="input-id"
                             id="loginUserId"
                             name="id"
+                            value={loginData.id}
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -28,6 +47,8 @@ const Login = () => {
                             className="input-pw"
                             id="loginUserPw"
                             name="pw"
+                            value={loginData.pw}
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -36,14 +57,14 @@ const Login = () => {
                         <label htmlFor="keeplogin">일주일간 로그인 유지하기</label>
                     </div>
 
-                    <button className='btn__login'>
+                    <button className='btn__login' onClick={handleSubmit}>
                         로그인
                     </button>
 
                     <div className='find-idpw'>
-                    <a href="javascript:void(0)">아이디/비밀번호 찾기</a>
-                    </div>    
-                    
+                        <a href="javascript:void(0)">아이디/비밀번호 찾기</a>
+                    </div>
+
                 </div>
             </div>
         </>
@@ -51,4 +72,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default LoginForm

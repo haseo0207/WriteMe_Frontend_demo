@@ -1,0 +1,12 @@
+.noticelist>.header_box {
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+  width: 90%;
+  padding: 0 10px;
+}
+
+.list_wrapper{
+  max-width: 90%;
+  margin: 0 auto;
+}
