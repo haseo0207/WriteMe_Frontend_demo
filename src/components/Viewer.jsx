@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Viewer.css"
+import Button from './Button'
 const Viewer = ({ data }) => {
 
   return (
@@ -12,6 +13,7 @@ const Viewer = ({ data }) => {
         <div className="notice-info">
           <p>조회수 : {data.view}</p>
           <p>작성일 : {data.time}</p>
+          <Button type={"POSITIVE"} text={"수정"}/>
         </div>
       </div>
 

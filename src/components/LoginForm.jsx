@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "./LoginForm.css"
 import logo from "./../assets/PlayTalk.png";
+import Button from './Button';
 const LoginForm = ({ onLoginSubmit }) => {
     const [loginData, setLoginData] = useState({
         id: '',
@@ -57,10 +58,8 @@ const LoginForm = ({ onLoginSubmit }) => {
                         <label htmlFor="keeplogin">일주일간 로그인 유지하기</label>
                     </div>
 
-                    <button className='btn__login' onClick={handleSubmit}>
-                        로그인
-                    </button>
-
+                    <Button text={"로그인"} type={"POSITIVE"} onClick={handleSubmit}/>
+                    
                     <div className='find-idpw'>
                         <a href="javascript:void(0)">아이디/비밀번호 찾기</a>
                     </div>

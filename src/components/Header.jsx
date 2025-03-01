@@ -45,7 +45,7 @@ const Header = () => {
           </>
         ) : (
           <>
-            <li>{userInfo.id}</li>
+            <li>{userInfo.id} 님 환영합니다!</li>
             <li onClick={logout} style={{ color: "#5E35B1", cursor: "pointer" }}>
               로그아웃
             </li>
