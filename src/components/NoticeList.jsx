@@ -9,7 +9,7 @@ const NoticeList = ({data}) => {
       </div>
       <div className="list_wrapper">
         {data.map((item) => (
-          <NoticeItem key={item.id} {...item} />
+          <NoticeItem key={item.contentId} {...item} />
         ))}
       </div>
     </div>

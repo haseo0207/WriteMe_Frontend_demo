@@ -1,8 +1,11 @@
 import React from 'react'
 import "./Viewer.css"
 import Button from './Button'
-const Viewer = ({ data }) => {
+import { useNavigate, useParams } from 'react-router-dom';
 
+const Viewer = ({ data }) => {
+  const nav = useNavigate();
+  const params = useParams();
   return (
     <div className="Viewer">
       <h1>{data.title}</h1>
@@ -11,9 +14,9 @@ const Viewer = ({ data }) => {
           {data.name}
         </div>
         <div className="notice-info">
-          <p>조회수 : {data.view}</p>
-          <p>작성일 : {data.time}</p>
-          <Button type={"POSITIVE"} text={"수정"}/>
+          <p>조회수 : {data.viewCount}</p>
+          <p>작성일 : {data.writeDate}</p>
+          <Button type={"POSITIVE"} text={"수정"} onClick={() => nav(`/notice/edit/${params.id}`)}/>
         </div>
       </div>
 

@@ -4,11 +4,11 @@ import "./NoticeItem.css"
 import { CgProfile } from "react-icons/cg";
 import { FaRegEye } from "react-icons/fa6";
 
-const NoticeItem = ({ id, title, name, view, time, contents }) => {
+const NoticeItem = ({ contentId, title, name, view, time}) => {
   const nav = useNavigate();
 
   const goViewPage = () => {
-    nav(`view/${id}`);
+    nav(`view/${contentId}`);
   };
 
   return (
