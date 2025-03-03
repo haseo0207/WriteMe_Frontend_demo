@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Header from '../components/Header.jsx'
 import MainMenu from '../components/MainMenu.jsx';
 import Viewer from '../components/Viewer.jsx'
 import { useParams } from 'react-router-dom';
+import { NoticeStateContext } from "../App";
 
-const notice = { id: 1, title: "공지제목1", name: "관리자", viewCount:100 ,writeDate:"11:00",contents:"test1",usrid:"11"};
-  
+const notice = { contentId: 1, title: "공지제목1", name: "관리자", view:100 ,time:"11:00",contents:"test1",usrid:"11"};
+
 const noticeList = (contentId, setNotice) => {
 
   const query = new URLSearchParams({
@@ -36,22 +37,25 @@ const noticeList = (contentId, setNotice) => {
 }
 
 const NoticeView = () => {
+  const { noticeState, setNoticeState } = useContext(NoticeStateContext);
+
   const params = useParams();
   // const [notice, setNotice] = useState(null);
 
   useEffect(() => {
     // noticeList(params.id, setNotice)
+    setNoticeState(notice);
   }, [params]);
 
-  // if (!notice) {
-  //   return <div>Loading...</div>;
-  // }
+  if (!noticeState) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
       <Header />
       <MainMenu />
-      <Viewer data={notice} />
+      <Viewer data={noticeState} />
     </div>
   )
 }

@@ -37,10 +37,18 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/join" element={<JoinMember />} />
           <Route path="/notice" element={<Notice />} />
-          <NoticeStateContext.Provider value={{noticeState,setNoticeState}}>
-            <Route path="/notice/view/:id" element={<View />} />
-            <Route path="/notice/edit/:id" element={<Edit />} />
-          </NoticeStateContext.Provider>
+          <Route
+          path="/notice/*"
+          element={
+            <NoticeStateContext.Provider value={{ noticeState, setNoticeState }}>
+              <Routes>
+                <Route index element={<Notice />} />
+                <Route path="view/:id" element={<View />} />
+                <Route path="edit/:id" element={<Edit />} />
+              </Routes>
+            </NoticeStateContext.Provider>
+          }
+        />
         </Routes>
       </UserStateContext.Provider>
     </>

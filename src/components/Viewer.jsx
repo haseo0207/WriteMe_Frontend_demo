@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./Viewer.css"
 import Button from './Button'
 import { useNavigate, useParams } from 'react-router-dom';
 
 const Viewer = ({ data }) => {
+
   const nav = useNavigate();
   const params = useParams();
   return (
@@ -16,7 +17,7 @@ const Viewer = ({ data }) => {
         <div className="notice-info">
           <p>조회수 : {data.viewCount}</p>
           <p>작성일 : {data.writeDate}</p>
-          <Button type={"POSITIVE"} text={"수정"} onClick={() => nav(`/notice/edit/${params.id}`)}/>
+          <Button type={"POSITIVE"} text={"수정"} onClick={() => nav(`/notice/edit/${params.id}`)} />
         </div>
       </div>
 
