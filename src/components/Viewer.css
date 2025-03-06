@@ -16,12 +16,14 @@
   position: relative;
 }
 
-.notice-info>Button {
+.notice-info>div {
   position: absolute;
   bottom: 45px;
   font-size: 13px;
 }
-
+.notice-info>div>button {
+  margin-left: 10px;
+}
 .Viewer>h1 {
   margin: 20px 7px;
 }

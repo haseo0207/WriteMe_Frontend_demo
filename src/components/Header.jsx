@@ -11,15 +11,14 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    setIsLoggedIn(userInfo.id !== "");
-  }, [userInfo.id]);
+    setIsLoggedIn(!!userInfo);
+  }, [userInfo]);
 
   const logout = () => {    
-    dispatchUserInfo({
-      type : "LOGOUT",
-      payload : {id: "", nickname: ""}
-    });
-    nav("/");
+    dispatchUserInfo({ type: 'LOGOUT' });
+    sessionStorage.removeItem('loginData'); 
+    setIsLoggedIn(false); 
+    nav('/');
   }
 
   return (

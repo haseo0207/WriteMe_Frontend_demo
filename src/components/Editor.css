@@ -1,0 +1,48 @@
+.editortitle {
+  display: flex;
+  justify-content: space-between;
+  /* border-bottom: 1px solid rgb(226, 226, 226); */
+  align-items: center;
+  height: 50px;
+  margin: 10px 10px;
+}
+
+.Editor .editorcontent {
+  margin: 20px 10px;
+  width: 100%;
+  border-radius: 5px;
+  border-bottom: 1px solid rgb(226, 226, 226);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.Editor .editorcontent>div {
+  padding: 10px;
+  text-align: left;
+  font-weight: 400;
+  min-height: 400px;
+}
+
+textarea {
+  background-color: rgb(236, 236, 236);
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: auto 0;
+}
+
+textarea {
+  width: 99%;
+  min-height: 200px;
+  resize: vertical;
+  box-sizing: border-box;
+  min-height: 400px;
+}
+
+.input-editortitle{
+  width: 75%; /* 전체 너비 차지 */
+  padding: 10px; /* 패딩 */
+  box-sizing: border-box; /* 패딩과 테두리를 포함한 너비 계산 */
+  border: 1px solid rgb(226, 226, 226);
+}

@@ -110,7 +110,7 @@ const JoinForm = ({ handleChange, sendInfo }) => {
             <Button
               onClick={() => sendInfo()}
               text={"회원가입"}
-              type={"NEGATIVE"}
+              type={"POSITIVE"}
             />
           </div>
 

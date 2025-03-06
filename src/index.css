@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .icon-font {
   font-family: 'YourFontFamily', sans-serif;
   font-weight: bold;
@@ -17,6 +21,8 @@ body {
   font-weight: 400;
   line-height: 1.4;
   font-family: 'Nanum Gothic', sans-serif;
+  background-color: rgb(243, 240, 240) ;
+  min-height: 100%;
 }
 
 .header_box {
@@ -39,7 +45,8 @@ body {
   width: 100%;
   margin: 0 auto;
   min-height: 100vh;
-  height: 100%;
   box-shadow: rgba(100, 100, 100, 0.2) 0px 0px 29px 0px;
   padding: 0px 20px;
+  display: flex; 
+  flex-direction: column; 
 }

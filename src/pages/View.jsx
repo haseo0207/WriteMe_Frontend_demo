@@ -2,10 +2,9 @@ import React, { useContext, useEffect, useState } from 'react'
 import Header from '../components/Header.jsx'
 import MainMenu from '../components/MainMenu.jsx';
 import Viewer from '../components/Viewer.jsx'
-import { useParams } from 'react-router-dom';
-import { NoticeStateContext } from "../App";
+import { useNavigate, useParams } from 'react-router-dom';
 
-const notice = { contentId: 1, title: "공지제목1", name: "관리자", view:100 ,time:"11:00",contents:"test1",usrid:"11"};
+const mocknotice = { contentId: 1, title: "공지제목1", name: "관리자", viewCount: 100, writeDate: "11:00", contents: "공지사항 입니다 <br>해당 내용은 DB 연결후 가지고 올 데이터 입니다. <br> ", usrid: "11" };
 
 const noticeList = (contentId, setNotice) => {
 
@@ -36,18 +35,30 @@ const noticeList = (contentId, setNotice) => {
     });
 }
 
-const NoticeView = () => {
-  const { noticeState, setNoticeState } = useContext(NoticeStateContext);
 
+
+const View = () => {
   const params = useParams();
-  // const [notice, setNotice] = useState(null);
+  const [notice, setNotice] = useState(mocknotice);
+  const navigate = useNavigate();
+
+  // 수정 버튼 클릭 핸들러
+  const handleEditClick = () => {
+    sessionStorage.setItem('editNotice', JSON.stringify(notice));
+    navigate(`/notice/edit/${params.id}`);
+  };
+
+  // 삭제 버튼 클릭 핸들러
+  const handleDeleteClick = () => {
+    // 삭제 로직 추가 가능
+    navigate('/notice/');
+  };
 
   useEffect(() => {
     // noticeList(params.id, setNotice)
-    setNoticeState(notice);
   }, [params]);
 
-  if (!noticeState) {
+  if (!notice) {
     return <div>Loading...</div>;
   }
 
@@ -55,9 +66,12 @@ const NoticeView = () => {
     <div>
       <Header />
       <MainMenu />
-      <Viewer data={noticeState} />
+      <Viewer data={notice}
+        onEditClick={handleEditClick}
+        onDeleteClick={handleDeleteClick}
+      />
     </div>
   )
 }
 
-export default NoticeView
+export default View
