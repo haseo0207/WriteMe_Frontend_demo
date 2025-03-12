@@ -7,8 +7,8 @@ import { useNavigate } from 'react-router-dom';
 const LoginForm = ({ loginData, onChange, onLoginSubmit }) => {
   const nav = useNavigate();
   return (
-    <div className="h-[calc(100vh-51px)] flex items-center justify-center">
-      <div className="relative flex flex-col m-8 space-y-8 bg-white-100 shadow-2xl rounded-2xl md:flex-row md:justify-between md:space-y-0 max-w-[1000px] w-full">
+    <div className="min-h-[calc(100vh-51px)] flex items-center justify-center min-h-[calc(100vh-51px)]  ">
+      <div className="flex flex-col m-8 space-y-8 bg-white-100 shadow-2xl rounded-2xl md:flex-row md:justify-between md:space-y-0 max-w-[1000px] w-full">
         <div className="flex flex-col justify-center p-8 md:p-20 w-full">
           <div>
             <div className="icon_ flex items-center mb-0 -translate-x-[10px]">

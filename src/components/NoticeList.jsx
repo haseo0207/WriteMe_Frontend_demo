@@ -1,10 +1,10 @@
 import React from 'react'
 import NoticeItem from '../components/NoticeItem'
 import "./NoticeList.css"
-const NoticeList = ({data}) => {
+const NoticeList = ({ data }) => {
   return (
     <div className="noticelist">
-      <div className="header_box">
+      <div className="header_box text-4xl">
         공지사항
       </div>
       <div className="list_wrapper">

@@ -7,7 +7,7 @@ const MainMenu = () => {
   return (
     <>
       <ul className='main-menu'>
-        <li>커뮤니티</li>
+        <li onClick={() => nav("/community")}>커뮤니티</li>
         <li onClick={() => nav("/notice")} >공지사항</li>
         <li>이벤트</li>
       </ul>

@@ -10,6 +10,7 @@ import { handleContentsClick } from "./util/noticeclick";
 import View from "./pages/View";
 import Edit from "./pages/Edit";
 import Test from "./components/LoginForm";
+import Community from "./pages/community";
 
 export const UserStateContext = createContext();
 
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/join" element={<JoinMember />} />
+          <Route path="/community" element={<Community />} />
           <Route path="/notice" element={<Notice />} />
           <Route path="/notice/view/:id" element={<View />} />
           <Route path="/notice/edit/:id" element={<Edit />} />
