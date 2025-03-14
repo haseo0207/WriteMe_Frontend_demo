@@ -9,9 +9,7 @@ import Header from "./components/Header";
 import { handleContentsClick } from "./util/noticeclick";
 import View from "./pages/View";
 import Edit from "./pages/Edit";
-import Test from "./components/LoginForm";
 import Community from "./pages/community";
-
 export const UserStateContext = createContext();
 
 const reducer = (state, action) => {
@@ -32,7 +30,6 @@ const App = () => {
   const [userInfo, dispatchUserInfo] = useReducer(reducer, initialUserInfo);
   return (
     <>
-    {/* <Test/> */}
       <UserStateContext.Provider value={{ userInfo, dispatchUserInfo }}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -44,7 +41,7 @@ const App = () => {
           <Route path="/notice/edit/:id" element={<Edit />} />
         </Routes>
       </UserStateContext.Provider>
-    </>
+      </>
   );
 }
 

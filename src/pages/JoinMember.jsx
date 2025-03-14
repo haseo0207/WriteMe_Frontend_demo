@@ -201,7 +201,7 @@ const JoinMember = () => {
   return (
     <div>
       <Header />
-      <div className="flex justify-center min-h-[calc(100vh-60px)]">
+      <div className="flex justify-center min-h-[calc(100vh-60px)] mt-10">
         <div className="bg-white flex flex-col m-8 space-y-8 shadow-2xl rounded-2xl max-w-[800px] w-full p-12">
           <div>
             <div className="icon_ flex items-center mb-0 -translate-x-[10px]">

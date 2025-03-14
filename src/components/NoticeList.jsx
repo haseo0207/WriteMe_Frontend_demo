@@ -3,7 +3,7 @@ import NoticeItem from '../components/NoticeItem'
 import "./NoticeList.css"
 const NoticeList = ({ data }) => {
   return (
-    <div className="noticelist">
+    <div className="noticelist mt-32">
       <div className="header_box text-4xl">
         공지사항
       </div>

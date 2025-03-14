@@ -4,7 +4,7 @@ import Button from './Button'
 
 const Editor = ({ title, contents, onTitleChange, onContentChange, onSubmit }) => {
   return (
-    <div className="Editor">
+    <div className="Editor mt-32">
       <div className="editortitle">
         <input
           className="input-editortitle"

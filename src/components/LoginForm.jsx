@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const LoginForm = ({ loginData, onChange, onLoginSubmit }) => {
   const nav = useNavigate();
   return (
-    <div className="min-h-[calc(100vh-51px)] flex items-center justify-center min-h-[calc(100vh-51px)]  ">
+    <div className="min-h-[calc(100vh-51px)] flex items-center justify-center mt-10">
       <div className="flex flex-col m-8 space-y-8 bg-white-100 shadow-2xl rounded-2xl md:flex-row md:justify-between md:space-y-0 max-w-[1000px] w-full">
         <div className="flex flex-col justify-center p-8 md:p-20 w-full">
           <div>
@@ -15,7 +15,7 @@ const LoginForm = ({ loginData, onChange, onLoginSubmit }) => {
               <img src={logo} alt="메인아이콘" className="h-[80px] mt-1" />
               <h1 className="icon-font">LOGIN</h1>
             </div>
-            <p className="font-medium text-sm text-gray-400 mb-8 ml-0">
+            <p className="font-medium text-sm text-gray-400 mb-8 ml-0 ">
               어서오세요! 아이디와 비밀번호를 입력해 주세요.
             </p>
           </div>

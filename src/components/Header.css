@@ -5,6 +5,11 @@
   margin: auto 0px;
   border-bottom: 1px solid rgb(226, 226, 226);
   background-color: white;
+  position: fixed;
+  width: 100%; /* 부모(#root)의 너비를 따름 */
+  left : 0;
+  height: 50px;
+  z-index: 1000;
 }
 
 .Header>div {

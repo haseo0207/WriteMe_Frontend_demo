@@ -3,8 +3,8 @@ import Button from './Button'
 
 const Viewer = ({ data, onEditClick, onDeleteClick }) => {
   return (
-    <div className="Viewer">
-      <h1>{data.title}</h1>
+    <div className="Viewer mt-32">
+      <h1 className="text-4xl">{data.title}</h1>
       <div className="NoticeWriteInfo">
         <div className="notice-nickname">
           {data.name}
