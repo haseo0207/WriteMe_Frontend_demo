@@ -52,7 +52,7 @@ const JoinMember = () => {
   const [isEditable, setIsEditable] = useState(true);
   // 임의의 ID 배열
   const idlist = ["123456", "qwerty", "11111111"];
-  
+
   const sendInfo = (info) => {
     console.log(info);
     fetch("http://localhost:8080/users", {
@@ -195,30 +195,30 @@ const JoinMember = () => {
         const updatedFormData = { ...prev, email: fullEmail };
         sendInfo(updatedFormData);
         return updatedFormData;
-      });     
+      });
     }
   };
   return (
     <div>
       <Header />
-      <div className="flex justify-center min-h-[calc(100vh-60px)] mt-10">
-        <div className="bg-white flex flex-col m-8 space-y-8 shadow-2xl rounded-2xl max-w-[800px] w-full p-12">
+      <div className="flex justify-center mt-10">
+        <div className="bg-white flex flex-col m-8 space-y-4 shadow-2xl rounded-2xl max-w-[800px] w-full p-8">
           <div>
-            <div className="icon_ flex items-center mb-0 -translate-x-[10px]">
-              <img src={logo} alt="메인아이콘" className="h-[80px] mt-1" />
+            <div className="icon_ flex items-center mb-0 -translate-x-[10px] -translate-y-[10px] -mb-3">
+              <img src={logo} alt="메인아이콘" className="h-[80px] mt-1 " />
               <h1 className="icon-font">SIGN UP</h1>
             </div>
-            <p className="font-medium text-sm text-gray-400">
+            <p className="font-medium text-xs text-gray-400 ">
               회원이 되어 다양한 혜택을 경험해 보세요!
             </p>
           </div>
 
           <div>
-            <div className="flex space-x-3 ml-1">
-              <label className="text-lg font-medium font-bold">아이디</label>
+            <div className="flex space-x-3 ml-1 mt-4">
+              <label className="text-base">아이디</label>
               {warnings.id && (
                 <p
-                  className={`mt-1.5 text-sm ${warnings.id === "사용 가능한 ID입니다" ? "text-green-500" : "text-red-500"
+                  className={`mt-1 text-xs ${warnings.id === "사용 가능한 ID입니다" ? "text-green-500" : "text-red-500"
                     }`}
                 >
                   {warnings.id}
@@ -228,7 +228,7 @@ const JoinMember = () => {
             <div className="relative mt-1">
               <input
                 type="text"
-                className="w-full border-2 border-gray-100 rounded-xl p-4 mt-0 bg-transparent"
+                className="w-full border-2 border-gray-100 rounded-xl p-2.5 mt-0 bg-transparent text-sm"
                 placeholder="아이디 입력(6~20자)"
                 id="createUserId"
                 name="id"
@@ -238,7 +238,7 @@ const JoinMember = () => {
                 maxLength={20}
               />
               <Button
-                className="absolute right-3 px-7 py-2 text-sm top-1/2 -translate-y-1/2"
+                className="absolute right-3 px-7 py-1.5 text-sm top-1/2 -translate-y-1/2 font-normal"
                 text="중복 확인"
                 type="POSITIVE"
                 onClick={handleDuplicateCheck}
@@ -248,14 +248,14 @@ const JoinMember = () => {
 
           <div>
             <div className="flex space-x-3 ml-1">
-              <label className="text-lg font-medium font-bold">비밀번호</label>
+              <label className="text-base">비밀번호</label>
               {warnings.password && (
-                <p className="text-red-500 mt-1.5 text-sm">{warnings.password}</p>
+                <p className="text-red-500 mt-1 text-xs">{warnings.password}</p>
               )}
             </div>
             <input
               type="password"
-              className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent"
+              className="w-full border-2 border-gray-100 rounded-xl p-2.5 mt-0 bg-transparent text-sm"
               placeholder="비밀번호 입력(문자,숫자,특수문자 포함 8~20자)"
               id="createUserPw"
               name="password"
@@ -268,10 +268,10 @@ const JoinMember = () => {
 
           <div>
             <div className="flex space-x-3 ml-1">
-              <label className="text-lg font-medium font-bold">비밀번호 확인</label>
+              <label className="text-base">비밀번호 확인</label>
               {warnings.confirmPassword && (
                 <p
-                  className={`mt-1.5 text-sm ${warnings.confirmPassword === "비밀번호가 일치"
+                  className={`mt-1 text-xs ${warnings.confirmPassword === "비밀번호가 일치"
                     ? "text-green-500"
                     : "text-red-500"
                     }`}
@@ -282,7 +282,7 @@ const JoinMember = () => {
             </div>
             <input
               type="password"
-              className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent"
+              className="w-full border-2 border-gray-100 rounded-xl p-2.5 mt-0 bg-transparent text-sm"
               placeholder="비밀번호 재입력"
               id="checkUserPw"
               name="confirmPassword"
@@ -295,14 +295,14 @@ const JoinMember = () => {
 
           <div>
             <div className="flex space-x-3 ml-1">
-              <label className="text-lg font-medium font-bold">닉네임</label>
+              <label className="text-base">닉네임</label>
               {warnings.nickname && (
-                <p className="text-red-500 mt-1.5 text-sm">{warnings.nickname}</p>
+                <p className="text-red-500 mt-1 text-xs">{warnings.nickname}</p>
               )}
             </div>
             <input
               type="text"
-              className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent"
+              className="w-full border-2 border-gray-100 rounded-xl p-2.5 mt-0 bg-transparent text-sm"
               placeholder="닉네임을 입력해주세요"
               id="createUserNickName"
               name="nickname"
@@ -313,16 +313,16 @@ const JoinMember = () => {
 
           <div>
             <div className="flex space-x-3 ml-1">
-              <label className="text-lg font-medium font-bold">휴대번호</label>
+              <label className="text-base">휴대번호</label>
               {(warnings.phone || warnings.phoneVerification) && (
-                <p className="text-red-500 mt-1.5 text-sm">
+                <p className="text-red-500 mt-1 text-xs">
                   {warnings.phone || warnings.phoneVerification}
                 </p>
               )}
             </div>
             <input
               type="text"
-              className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent"
+              className="w-full border-2 border-gray-100 rounded-xl p-2.5 mt-0 bg-transparent text-sm"
               placeholder="휴대폰 번호 입력 ('-'제외 11자리)"
               id="createUserPh"
               name="phone"
@@ -332,7 +332,7 @@ const JoinMember = () => {
             <div className="relative mt-1">
               <input
                 type="text"
-                className="w-full border-2 border-gray-100 rounded-xl p-4 mt-0 bg-transparent"
+                className="w-full border-2 border-gray-100 rounded-xl p-2.5 mt-0 bg-transparent text-sm"
                 placeholder="인증번호를 입력하세요"
                 id="checkUserPh"
                 name="phoneVerification"
@@ -340,7 +340,7 @@ const JoinMember = () => {
                 onChange={handleChange}
               />
               <Button
-                className="absolute right-3 px-7 py-2 text-sm top-1/2 -translate-y-1/2"
+                className="absolute right-3 px-7 py-1.5 text-sm top-1/2 -translate-y-1/2 font-normal"
                 text="인증번호 받기"
                 type="POSITIVE"
               />
@@ -349,9 +349,9 @@ const JoinMember = () => {
 
           <div>
             <div className="flex space-x-3 ml-1">
-              <label className="text-lg font-medium font-bold">이메일</label>
+              <label className="text-base">이메일</label>
               {(warnings.emailId || warnings.emailDomain) && (
-                <p className="text-red-500 mt-1.5 text-sm">
+                <p className="text-red-500 mt-1 text-xs">
                   {warnings.emailId || warnings.emailDomain}
                 </p>
               )}
@@ -359,7 +359,7 @@ const JoinMember = () => {
             <div className="mt-1 flex items-center space-x-3">
               <input
                 type="text"
-                className="w-full border-2 border-gray-100 rounded-xl p-4 mt-0 bg-transparent"
+                className="w-full border-2 border-gray-100 rounded-xl p-2.5 mt-0 bg-transparent text-sm"
                 placeholder="이메일을 입력하세요"
                 id="createUserEmail"
                 name="emailId"
@@ -369,7 +369,8 @@ const JoinMember = () => {
               <p className="text-lg font-medium font-bold">@</p>
               <input
                 type="text"
-                className={`w-full border-2 border-gray-100 rounded-xl p-4 mt-0 ${isEditable ? "bg-transparent" : "bg-gray-100 cursor-default focus:outline-none"
+                className={`w-full border-2 border-gray-100 rounded-xl p-2.5 mt-0 text-sm 
+                  ${isEditable ? "bg-transparent" : "bg-gray-100 cursor-default focus:outline-none"
                   }`}
                 placeholder="도메인을 입력하세요"
                 id="createEmailDomain"
@@ -382,7 +383,7 @@ const JoinMember = () => {
             </div>
           </div>
 
-          <div className="pt-4 flex flex-col">
+          <div className="pt-4 flex flex-col w-full">
             <Button
               text="가입완료"
               type="POSITIVE"

@@ -57,6 +57,6 @@ ul.header-util li::before {
 }
 
 .btn-icon {
-  margin-top: 5px;
+  margin-top: 0px;
   cursor: 'pointer'
 }

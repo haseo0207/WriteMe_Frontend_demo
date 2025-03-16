@@ -27,9 +27,9 @@ const CustomSelect = ({ domainList, onSelect }) => {
   };
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className="relative text-sm" ref={dropdownRef}>
       <div
-        className={`border-2 rounded-xl p-4 px-5 cursor-pointer whitespace-nowrap min-w-[130px] ${isOpen ? "border-black" : "border-gray-100"
+        className={`border-2 rounded-xl p-2.5 px-5 cursor-pointer whitespace-nowrap min-w-[130px] ${isOpen ? "border-black" : "border-gray-100"
           }`}
         onClick={() => setIsOpen(!isOpen)}
       >
