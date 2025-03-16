@@ -3,7 +3,8 @@ import { CgProfile } from "react-icons/cg";
 
 const CommunityContent = ({ user, imageUrl, title, onClick }) => {
   return (
-    <div className="max-w-xl mx-auto bg-white shadow-md rounded-lg overflow-hidden mb-4 transform transition-transform duration-200 hover:scale-105"
+    <div className="w-[400px]  mx-auto bg-white shadow-md rounded-lg mb-4 
+    transform transition-transform duration-200 hover:scale-105"
       style={{ minheight: '650px' }}
       onClick={onClick}>
 
@@ -15,10 +16,9 @@ const CommunityContent = ({ user, imageUrl, title, onClick }) => {
         <img
           className="w-full object-cover bg-red-100"
           src={imageUrl}
-          style={{ height: '600px' }}
+          style={{ height: '300px' }}
           alt="Post"
         />
-
       </div>
 
 

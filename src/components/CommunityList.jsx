@@ -9,7 +9,7 @@ const CommunityList = ({ posts, onPostClick }) => {
         {posts.map((post, index) => (
           <div
             key={index}
-            className="w-full 2xl:w-1/2 px-2 mb-4" 
+            className="w-full lg:w-1/2 xl:w-1/2 2xl:w-1/3 px-2 mb-4" 
           >
             <CommunityContent
               user={post.user}

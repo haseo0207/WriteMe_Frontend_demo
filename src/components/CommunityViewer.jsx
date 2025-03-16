@@ -10,7 +10,7 @@ const CommunityViewer = ({ user, imageUrl, title, onClose }) => {
         onClick={onClose}
       />
       {/* 모달 콘텐츠 */}
-      <div className="relative bg-white rounded-lg shadow-lg w-full h-full flex flex-col md:flex-row h-[90vh] mx-14">
+      <div className="relative bg-white rounded-lg shadow-lg w-5/6 h-5/6 flex flex-col md:flex-row h-[90vh] mx-16">
         <button
           className="absolute top-2 right-2 text-gray-600 hover:text-gray-800 z-10"
           onClick={onClose}
