@@ -14,10 +14,10 @@ const Header = () => {
     setIsLoggedIn(!!userInfo);
   }, [userInfo]);
 
-  const logout = () => {    
+  const logout = () => {
     dispatchUserInfo({ type: 'LOGOUT' });
-    sessionStorage.removeItem('loginData'); 
-    setIsLoggedIn(false); 
+    sessionStorage.removeItem('loginData');
+    setIsLoggedIn(false);
     nav('/');
   }
 
@@ -35,17 +35,25 @@ const Header = () => {
 
         {!isLoggedIn ? (
           <>
-            <li onClick={() => nav("/join")} style={{ color: "#5E35B1", cursor: "pointer" }}>
+            <li onClick={() => nav("/join")}
+              className="text-xs" style={{ color: "#5E35B1", cursor: "pointer" }}>
               회원가입
             </li>
-            <li onClick={() => nav("/login")} style={{ color: "red", cursor: "pointer" }}>
+            <li onClick={() => nav("/login")}
+              className="text-xs" style={{ color: "red", cursor: "pointer" }}>
               로그인
             </li>
           </>
         ) : (
           <>
-            <li>{userInfo.id} 님 환영합니다!</li>
-            <li onClick={logout} style={{ color: "#5E35B1", cursor: "pointer" }}>
+            <li className="text-xs">
+              <label className='font-bold'>
+                {userInfo.id}
+              </label>
+              님 환영합니다!
+            </li>
+            <li onClick={logout}
+              className="text-xs" style={{ color: "red", cursor: "pointer" }}>
               로그아웃
             </li>
           </>
