@@ -7,7 +7,7 @@ import CommunityViewer from '../components/CommunityViewer';
 const dummyPosts = [
   {
     user: 'user1',
-    imageUrl: '/Img/bird.jpg',
+    imageUrl: ['/Img/bird.jpg', '/Img/cat.jpg'],
     title: '오늘 날씨가 너무 좋다! 산책 가야지~',
     contentId: '',
     name: '',
@@ -15,21 +15,21 @@ const dummyPosts = [
   },
   {
     user: 'user2',
-    imageUrl: '/Img/cat.jpg',
+    imageUrl: ['/Img/cat.jpg'],
     title: '새로 산 카메라로 찍은 사진 어때?',
     contentId: '',
     name: '',
   },
   {
     user: 'user3',
-    imageUrl: '/Img/desert.jpg',
+    imageUrl: ['/Img/desert.jpg','/Img/cat.jpg'],
     title: '저녁 메뉴 추천 받아요!',
     contentId: '',
     name: '',
   },
   {
     user: 'user4',
-    imageUrl: '/Img/flowers.jpg',
+    imageUrl: ['/Img/flowers.jpg'],
     title: '오늘 날씨가 너무 좋다! 산책 가야지~',
     contentId: '',
     name: '',
@@ -37,7 +37,7 @@ const dummyPosts = [
   },
   {
     user: 'user5',
-    imageUrl: '/Img/french-bulldog.jpg',
+    imageUrl: ['/Img/french-bulldog.jpg'],
     title: '오늘 날씨가 너무 좋다! 산책 가야지~',
     contentId: '',
     name: '',
@@ -45,14 +45,13 @@ const dummyPosts = [
   },
   {
     user: 'user6',
-    imageUrl: '/Img/torii.jpg',
+    imageUrl: ['/Img/torii.jpg'],
     title: '오늘 날씨가 너무 좋다! 산책 가야지~',
     contentId: '',
     name: '',
 
   },
 ];
-
 
 const Community = () => {
   const [selectedPost, setSelectedPost] = useState(null);

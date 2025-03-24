@@ -11,6 +11,8 @@ import View from "./pages/View";
 import Edit from "./pages/Edit";
 import Community from "./pages/community";
 export const UserStateContext = createContext();
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const reducer = (state, action) => {
   switch (action.type) {
