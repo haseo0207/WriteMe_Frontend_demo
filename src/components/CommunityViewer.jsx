@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { CgProfile } from 'react-icons/cg';
 import Slider from "react-slick";
 import "./CommunityViewer.css"
-const CommunityViewer = ({ user, imageUrl, title, onClose }) => {
+const CommunityViewer = ({ user, imageUrl, title, comments, onClose }) => {
   const [content, setContent] = useState('');
   const textarea = useRef(null);
 
@@ -89,11 +89,13 @@ const CommunityViewer = ({ user, imageUrl, title, onClose }) => {
           <div className="border-t pt-4 flex-grow overflow-y-auto">
             <h3 className="font-semibold text-gray-800 mb-2">댓글</h3>
             <ul className="text-gray-600">
-              {Array.from({ length: 20 }, (_, i) => (
-                <li key={i} className="mb-2">
-                  user{i + 1}: 이건 테스트 댓글 #{i + 1}입니다!
+
+              {comments.map((comment) => (
+                <li key={comment.id} className="mb-2">
+                  {comment.user}: {comment.content}
                 </li>
               ))}
+              
             </ul>
           </div>
 
