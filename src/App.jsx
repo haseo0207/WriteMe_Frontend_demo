@@ -9,7 +9,7 @@ import Header from "./components/Header";
 import { handleContentsClick } from "./util/noticeclick";
 import View from "./pages/View";
 import Edit from "./pages/Edit";
-import Community from "./pages/community";
+import Community from "./pages/Community";
 export const UserStateContext = createContext();
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

@@ -9,37 +9,37 @@ const dummyPosts = [
     user: 'user1',
     imageUrl: ['/Img/bird.jpg', '/Img/cat.jpg'],
     title: '오늘 날씨가 너무 좋다! 산책 가야지~',
-    contentId: '',
+    contentId: '1',
   },
   {
     user: 'user2',
     imageUrl: ['/Img/cat.jpg'],
     title: '새로 산 카메라로 찍은 사진 어때?',
-    contentId: '',
+    contentId: '2',
   },
   {
     user: 'user3',
     imageUrl: ['/Img/desert.jpg', '/Img/cat.jpg'],
     title: '저녁 메뉴 추천 받아요!',
-    contentId: '',
+    contentId: '3',
   },
   {
     user: 'user4',
     imageUrl: ['/Img/flowers.jpg'],
     title: '오늘 날씨가 너무 좋다! 산책 가야지~',
-    contentId: '',
+    contentId: '4',
   },
   {
     user: 'user5',
     imageUrl: ['/Img/french-bulldog.jpg'],
     title: '오늘 날씨가 너무 좋다! 산책 가야지~',
-    contentId: '',
+    contentId: '5',
   },
   {
     user: 'user6',
     imageUrl: ['/Img/torii.jpg'],
     title: '오늘 날씨가 너무 좋다! 산책 가야지~',
-    contentId: '',
+    contentId: '6',
   },
 ];
 
@@ -51,13 +51,14 @@ const fetchPostList = (setPostList) => {
 
 // 게시글 상세 데이터 가져오기
 // DB연결시 contentId 통해 재쿼리
-const fetchPostDetails = (post,setSelectedPost) => {
+const fetchPostDetails = (post, setSelectedPost) => {
   const dummyResponse = {
     ...post,
     comments: [
-      { id: 1, user: "user2", content: "최신 댓글 1" },
-      { id: 2, user: "user3", content: "최신 댓글 2" },
+      { id: 1, user: "user2", content: "최신 댓글 1", profileImage: "/Img/torii.jpg"},
+      { id: 2, user: "user3", content: "최신 댓글 2", profileImage: "/Img/desert.jpg"},
     ],
+    likeCount: '5',
   };
   setSelectedPost(dummyResponse);
 };
@@ -71,7 +72,7 @@ const Community = () => {
   }, []);
 
   const handlePostClick = (post) => {
-    fetchPostDetails(post,setSelectedPost);
+    fetchPostDetails(post, setSelectedPost);
   };
 
   const handleCloseModal = () => {
@@ -102,6 +103,8 @@ const Community = () => {
           imageUrl={selectedPost.imageUrl}
           title={selectedPost.title}
           comments={selectedPost.comments}
+          contentId={selectedPost.contentId}
+          likeCount={selectedPost.likeCount}
           onClose={handleCloseModal}
         />
       )}

@@ -303,11 +303,13 @@ const JoinMember = () => {
             <input
               type="text"
               className="w-full border-2 border-gray-100 rounded-xl p-2.5 mt-0 bg-transparent text-sm"
-              placeholder="닉네임을 입력해주세요"
+              placeholder="닉네임을 입력(1~10자)"
               id="createUserNickName"
               name="nickname"
               value={formData.nickname}
               onChange={handleChange}
+              minLength={1}
+              maxLength={10}
             />
           </div>
 
