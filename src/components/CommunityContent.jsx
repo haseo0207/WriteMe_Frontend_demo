@@ -15,7 +15,7 @@ const CommunityContent = ({ user, imageUrl, title, onClick }) => {
       <div className='mx-4 relative'>
         <img
           className="w-full object-cover bg-red-100"
-          src={imageUrl[0]}
+          // src={imageUrl[0]}
           style={{ height: '300px' }}
           alt="Post"
         />

@@ -46,8 +46,29 @@ const dummyPosts = [
 // 게시글 리스트 가져오기
 const fetchPostList = (setPostList) => {
   // fetch통해 데이터 가지고오기기
-  setPostList(dummyPosts);
+  fetch(`http://localhost:8080/community`, {
+    method: "GET",
+    headers: { "Content-Type": "application/json" }
+  })
+      .then(response => {
+        if (!response.ok) {
+          // 상태 코드가 2xx가 아니라면 에러 처리
+          throw new Error("실패! 서버 응답 코드: " + response.status);
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log("받아온 데이터:", data);
+        setPostList(data)
+        alert("성공!");
+      })
+      .catch(error => {
+        console.error(error);
+        alert("오류가 발생했습니다.");
+      });
+  //setPostList(dummyPosts);
 };
+
 
 // 게시글 상세 데이터 가져오기
 // DB연결시 contentId 통해 재쿼리

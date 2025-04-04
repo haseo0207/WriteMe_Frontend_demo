@@ -12,7 +12,7 @@ const CommunityList = ({ posts, onPostClick }) => {
             className="w-full lg:w-1/2 xl:w-1/2 2xl:w-1/3 px-2 mb-4" 
           >
             <CommunityContent
-              user={post.user}
+              user={post.userId}
               imageUrl={post.imageUrl}
               title={post.title}
               onClick={() => onPostClick(post)}
